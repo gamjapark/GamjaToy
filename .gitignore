@@ -58,5 +58,6 @@ dkms.conf
 *.tlog
 *.lastbuildstate
 *.vcxproj.*
+*.vcxproj
 *.sln
 *.opendb
