@@ -4,3 +4,4 @@
    - ArrayRotation
       https://github.com/gamjapark/GamjaToy/blob/master/assignment/%5BCProgramming%5DArrayRotation/README.md
    - ReportCard
+      https://github.com/gamjapark/GamjaToy/blob/master/assignment/%5BCProgramming%5DReportCard/README.md
