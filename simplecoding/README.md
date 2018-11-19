@@ -6,4 +6,4 @@
 
    - InputString
 
-     https://github.com/gamjapark/GamjaToy/blob/master/assignment/%5BSimpleC%5DInputString/README.md
+     https://github.com/gamjapark/GamjaToy/blob/master/simplecoding/%5BSimpleC%5DInputString/README.md
