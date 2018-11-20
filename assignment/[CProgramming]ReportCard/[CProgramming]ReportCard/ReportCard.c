@@ -30,10 +30,10 @@ int main() {
 		student[i].avgNum = (double)(student[i].scoreNum0 + student[i].scoreNum1 + student[i].scoreNum2) / 3.0;
 	}
 
-	PrintRecord(student, "< ÇĞ¹ø ¼ø Ãâ·Â >");		//Step2. print record card order by student num
+	PrintRecord(student, "< í•™ë²ˆ ìˆœ ì¶œë ¥ >");		//Step2. print record card order by student num
 
 	int scoreNum;				//Step3. input num & print sorted record
-	printf("\n°ú¸ñ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.(0, 1, or 2) :"); scanf("%d", &scoreNum);
+	printf("\nê³¼ëª© ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”.(0, 1, or 2) :"); scanf("%d", &scoreNum);
 	printf("\n");
 	SortRecord(student, scoreNum);
 
@@ -42,7 +42,7 @@ int main() {
 
 void SortRecord(Record* record, unsigned char check) {
 	if (check != 0 && check != 1 && check != 2) {
-		printf("°ú¸ñ ¹øÈ£°¡ Àß¸øµÇ¾ú½À´Ï´Ù.");
+		printf("ê³¼ëª© ë²ˆí˜¸ê°€ ì˜ëª»ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		return;
 	}
 	
@@ -82,7 +82,7 @@ void SortRecord(Record* record, unsigned char check) {
 		}
 		break;
 	}
-	PrintRecord(record, "< Á¤·Ä ¼ø Ãâ·Â >");
+	PrintRecord(record, "< ì •ë ¬ ìˆœ ì¶œë ¥ >");
 }
 
 void SwapRecord(Record* a, Record *b) {
@@ -92,13 +92,13 @@ void SwapRecord(Record* a, Record *b) {
 }
 
 void PrintRecord(Record* a, const char* printString) {
-	printf(printString);			//Step2. print record card order by student num
+	printf(printString);			//orint string
 	for (int i = 0; i < 50; i++) {
 		printf("\n");
-		printf("ÇĞ ¹ø :%3d\n", a[i].stNum);
-		printf("°ú¸ñ 0 Á¡¼ö :%4d\n", a[i].scoreNum0);
-		printf("°ú¸ñ 1 Á¡¼ö :%4d\n", a[i].scoreNum1);
-		printf("°ú¸ñ 2 Á¡¼ö :%4d\n", a[i].scoreNum2);
-		printf("Æò±Õ Á¡¼ö :%4.2lf\n", a[i].avgNum);
+		printf("í•™ ë²ˆ :%3d\n", a[i].stNum);
+		printf("ê³¼ëª© 0 ì ìˆ˜ :%4d\n", a[i].scoreNum0);
+		printf("ê³¼ëª© 1 ì ìˆ˜ :%4d\n", a[i].scoreNum1);
+		printf("ê³¼ëª© 2 ì ìˆ˜ :%4d\n", a[i].scoreNum2);
+		printf("í‰ê·  ì ìˆ˜ :%4.2lf\n", a[i].avgNum);
 	}
 }
