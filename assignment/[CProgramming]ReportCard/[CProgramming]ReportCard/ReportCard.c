@@ -37,6 +37,7 @@ int main() {
 	printf("\n");
 	SortRecord(student, scoreNum);
 
+	free(student);
 	return 0;
 }
 
