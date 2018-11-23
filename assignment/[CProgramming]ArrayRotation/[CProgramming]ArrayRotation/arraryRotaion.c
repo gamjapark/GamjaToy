@@ -99,7 +99,7 @@ void Free2DArray(int ** Arr, int mHeight) {
 }
 
 void Print2DArray(int ** Arr, int mHeight, int mWidth, const char * printString) {
-	printf(printString);
+	printf("%s", printString);
 	for (int h = 0; h < mHeight; h++) {
 		for (int w = 0; w < mWidth; w++) 
 			printf("%7d", Arr[h][w]);
