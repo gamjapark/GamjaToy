@@ -92,7 +92,7 @@ void SwapRecord(Record* a, Record *b) {
 }
 
 void PrintRecord(Record* a, const char* printString) {
-	printf(printString);			//orint string
+	printf("%s", printString);			//print string
 	for (int i = 0; i < 50; i++) {
 		printf("\n");
 		printf("학 번 :%3d\n", a[i].stNum);
