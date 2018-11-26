@@ -9,4 +9,4 @@
 2. ImageProcessing
 
    - ColorSlicing
-      https://github.com/gamjapark/GamjaToy/blob/master/assignment/%5BCProgramming%5DColorSlicing/README.md
+      https://github.com/gamjapark/GamjaToy/blob/master/assignment/%5BImageProcessing%5DColorSlicing/README.md
