@@ -56,3 +56,7 @@ Homework #3
 7. 추출한 얼굴 영역에 Smooth 필터를 적용한 결과는 다음과 같습니다.
 
    ![1543415662548](C:\Users\kryj9\AppData\Roaming\Typora\typora-user-images\1543415662548.png)
+
+8. 원본 영상에 checkArray를 이용하여 추출된 부분의 픽셀 위치에 추출 후 smooth 필터를 적용한 영상을 overwrite한 결과 영상입니다.
+
+   ![1543416036660](C:\Users\kryj9\AppData\Roaming\Typora\typora-user-images\1543416036660.png)
