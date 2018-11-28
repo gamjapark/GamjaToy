@@ -106,10 +106,44 @@ int main() {
 	writeFile.write((char *)smoothImage, sizeof(unsigned char) * nHeight * nWidth * 3);
 	writeFile.close();
 
+	unsigned char* overwriteImage = new unsigned char[nHeight * nWidth * 3];
+
+	unsigned char* overR = new unsigned char[nHeight * nWidth];
+	unsigned char* overG = new unsigned char[nHeight * nWidth];
+	unsigned char* overB = new unsigned char[nHeight * nWidth];
+
+	for (int i = 0; i < nHeight * nWidth; i++) {
+		if (checkArray[i] != -1) {
+			overR[i] = smoothR[i];
+			overG[i] = smoothG[i];
+			overB[i] = smoothB[i];
+		}
+		else {
+			overR[i] = R[i];
+			overG[i] = G[i];
+			overB[i] = B[i];
+		}
+	}
+
+	idx = 0;
+	for (int i = 0; i < nHeight; i++) {
+		for (int j = 0; j < nWidth; j++) {
+			overwriteImage[(i * nWidth + j) * 3] = overR[idx];
+			overwriteImage[(i * nWidth + j) * 3 + 1] = overG[idx];
+			overwriteImage[(i * nWidth + j) * 3 + 2] = overB[idx];
+			++idx;
+		}
+	}
+
+	writeFile;
+	writeFile.open("C:\\Users\\kryj9\\Desktop\\overwriteImage.raw", ios::binary | ios::out);
+	writeFile.write((char *)overwriteImage, sizeof(unsigned char) * nHeight * nWidth * 3);
+	writeFile.close();
 
 	delete[] inputImage;
 	delete[] faceImage;
 	delete[] smoothImage;
+	delete[] overwriteImage;
 
 	delete[] R;
 	delete[] G;
@@ -127,6 +161,9 @@ int main() {
 	delete[] smoothG;
 	delete[] smoothB;
 
+	delete[] overR;
+	delete[] overG;
+	delete[] overB;
 	return 0;
 }
 
