@@ -6,6 +6,7 @@ using namespace std;
 #define WIDTH 512
 
 void Prewise_LinearContrastStretching(float** Pixel, int nHeight, int nWidth);
+void DisplayHistogram(int * Hist, const char* fileName);
 int main() {
 
 	unsigned char* inputImage = new unsigned char[HEIGHT * WIDTH * 3];
@@ -49,12 +50,36 @@ int main() {
 	writeFile.write((char *)outputImage, sizeof(unsigned char) * HEIGHT * WIDTH * 3);
 	writeFile.close();
 
+	int* HistR = new int[256];
+	memset(HistR, 0, sizeof(int) * 256);
+	int* HistG = new int[256];
+	memset(HistG, 0, sizeof(int) * 256);
+	int* HistB = new int[256];
+	memset(HistB, 0, sizeof(int) * 256);
+
+	for (int i = 0; i < HEIGHT; i++) {
+		for (int j = 0; j < WIDTH; j++) {
+			HistR[outputImage[(i*WIDTH + j) * 3]]++;
+			HistG[outputImage[(i*WIDTH + j) * 3 + 1]]++;
+			HistB[outputImage[(i*WIDTH + j) * 3 + 2]]++;
+		}
+	}
+
+	DisplayHistogram(HistR, "HistR.raw");
+	DisplayHistogram(HistG, "HistG.raw");
+	DisplayHistogram(HistB, "HistB.raw");
+
 	delete[] inputImage;
 	delete[] outputImage;
 
 	delete[] R;
 	delete[] G;
 	delete[] B;
+
+	delete[] HistR;
+	delete[] HistG;
+	delete[] HistB;
+
 	return 0;
 }
 
@@ -73,3 +98,31 @@ void Prewise_LinearContrastStretching(float** Pixel, int nHeight, int nWidth) {
 		}
 	}
 }
+
+void DisplayHistogram(int * Hist, const char* fileName)
+{
+	int nMax = 0;
+
+	for (int n = 0; n < 256; n++) {
+		if (nMax < Hist[n]) nMax = Hist[n];
+	}
+
+	double dNormalizeFactor = 255.0 / nMax;
+	unsigned char* HistDisp = new unsigned char[256 * 256];
+	memset(HistDisp, 0, sizeof(unsigned char) * 256 * 256);
+
+	for (int w = 0; w < 256; w++) {
+		int nNormalizeValue = (int)Hist[w] * dNormalizeFactor;
+		for (int h = 255; h > 255 - nNormalizeValue; h--) {
+			HistDisp[h * 256 + w] = 255;
+		}
+	}
+
+	ofstream writefile;
+	writefile.open(fileName, ios::binary | ios::out);
+	writefile.write((char *)HistDisp, 256 * 256);
+	writefile.close();
+
+	delete[] HistDisp;
+}
+
