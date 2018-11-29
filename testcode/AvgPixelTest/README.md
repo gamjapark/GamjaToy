@@ -19,14 +19,16 @@ Color Slicing 과제를 수행하기 위해 얼굴 영역을 추출하기 위한
 
 ### Try To
 
-1. Color Slicing 과제를 수행하기 위해 다음 이미지(256 x 256)를 사용할 예정입니다.
+1. Color Slicing 과제를 수행하기 위해 다음 이미지(520 x 678)를 사용할 예정입니다.
 <p align="center">
-  <img width="256" height="256" src="https://user-images.githubusercontent.com/36066656/49044000-e712cb80-f20f-11e8-9693-5e5e4c7a423c.png">
+  <img width="520" height="678" src="https://user-images.githubusercontent.com/36066656/49209347-982a8900-f3fd-11e8-8b0a-31877138dabc.png">
 </p>
+
 
 2. 다음과 같이 해당 이미지의 얼굴 영역을 잘라낸 이미지를 이용하여 픽셀의 평균값을 계산해 보는 테스트를 시도합니다.
 <p align="center">
-  <img width="62" height="81" src="https://user-images.githubusercontent.com/36066656/49044162-538dca80-f210-11e8-8683-4bd3a08a8d1c.png">
+  <img width="520" height="678" src="https://user-images.githubusercontent.com/36066656/49209499-fce5e380-f3fd-11e8-8b3e-c84cea74afa6.png">
 </p>
 
-3. 해당 이미지의 사이즈는 62 x 81이며, 평균값 계산시 흰색에 해당하는 (R, G, B) = (255, 255, 255)는 제외하고 계산합니다.
+
+3. 해당 이미지의 사이즈는 520 x 678이며, 평균값 계산시 흰색에 해당하는 (R, G, B) = (255, 255, 255)는 제외하고 계산합니다.
