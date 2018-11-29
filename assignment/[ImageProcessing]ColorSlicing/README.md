@@ -1,4 +1,4 @@
-Color Slicing
+# Color Slicing
 
 2018 2학기 광운대학교 컴퓨터 소프트웨어학과
 
