@@ -72,9 +72,37 @@ Homework #3
 8. 추출한 얼굴 영상에 Smooth Filter를 적용한 영상을 저장해 결과를 확인합니다.
 
     필터를 적용하기 전과 후의 영상을 비교해 봅니다. 
+    
+                         <Filter 적용 전>                                <Filter 적용 후>
+    
+    <p align="center">
+    <img width="761" height="510" src="https://user-images.githubusercontent.com/36066656/49229261-74cd0180-f430-11e8-9c0e-31647975dad5.png"> </p>
+    
+    실제로 육안으로 보기에 큰 차이를 알 수 없어 그림판을 이용해 확인하여 봅니다.
+    
+                             <Filter 적용 전>                                <Filter 적용 후>
 
+    <p align="center">
+    <img width="565" height="370" src="https://user-images.githubusercontent.com/36066656/49231166-b495e800-f434-11e8-87dc-9a7f0c9d5632.png"> </p>
+    
+    위와 같이 확대 시, 확실히 필터 적용 후에 더 부드러워진 것을 확인할 수 있습니다.
+    
 9. 원본 영상에 checkArray를 이용하여 추출된 부분의 픽셀 위치에 추출 후 smooth 필터를 적용한 영상을 overwrite합니다.
 
 10. Overwriter한 영상을 저장해 결과를 확인합니다.
 
     원본 영상과 최종 결과 영상을 비교해 봅니다. 
+
+                            <입력 영상>                                         <결과 영상>
+
+    <p align="center">
+    <img width="757" height="577" src="https://user-images.githubusercontent.com/36066656/49231758-f2dfd700-f435-11e8-8eb5-316f958b2908.png"> </p>
+    
+    마찬가지로 육안으로 보기에 큰 차이를 알 수 없어 그림판으로 이용해 확인하여 봅니다.
+    
+                             <입력 영상>                                         <결과 영상>        
+    <p align="center">
+    <img width="781" height="324" src="https://user-images.githubusercontent.com/36066656/49232274-fcb60a00-f436-11e8-8b08-3ae4ed1f90e3.png"> </p>
+    
+    확대하여 확인했을 때, 확실히 보정된 효과가 보이는 것을 확인할 수 있습니다.
+    
