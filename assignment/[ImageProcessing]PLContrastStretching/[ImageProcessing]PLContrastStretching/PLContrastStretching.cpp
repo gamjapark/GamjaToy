@@ -5,6 +5,7 @@ using namespace std;
 #define HEIGHT 512
 #define WIDTH 512
 
+void Prewise_LinearContrastStretching(float** Pixel, int nHeight, int nWidth);
 int main() {
 
 	unsigned char* inputImage = new unsigned char[HEIGHT * WIDTH * 3];
@@ -29,40 +30,9 @@ int main() {
 		}
 	}
 
-	for (int i = 0; i < HEIGHT * WIDTH; i++) {
-		float value = R[i];
-		if (150 > value) {
-			R[i] = value * (2.0 / 15.0);
-		}
-		else if (150 <= value && 200 > value) {
-			R[i] = value * 4.0 - 580.0;
-		}
-		else if (200 <= value && 256 > value) {
-			R[i] = (value - 200.0) * (7.0 / 11.0) + 220.0;
-		}
-
-		value = G[i];
-		if (150 > value) {
-			G[i] = value * (2.0 / 15.0);
-		}
-		else if (150 <= value && 200 > value) {
-			G[i] = value * 4.0 - 580.0;
-		}
-		else if (200 <= value && 256 > value) {
-			G[i] = (value - 200.0) * (7.0 / 11.0) + 220.0;
-		}
-
-		value = B[i];
-		if (150 > value) {
-			B[i] = value * (2.0 / 15.0);
-		}
-		else if (150 <= value && 200 > value) {
-			B[i] = value * 4.0 - 580.0;
-		}
-		else if (200 <= value && 256 > value) {
-			B[i] = (value - 200.0) * (7.0 / 11.0) + 220.0;
-		}
-	}
+	Prewise_LinearContrastStretching(&R, HEIGHT, WIDTH);
+	Prewise_LinearContrastStretching(&G, HEIGHT, WIDTH);
+	Prewise_LinearContrastStretching(&B, HEIGHT, WIDTH);
 
 	idx = 0;
 	for (int i = 0; i < HEIGHT; i++) {
@@ -85,7 +55,21 @@ int main() {
 	delete[] R;
 	delete[] G;
 	delete[] B;
-
 	return 0;
 }
 
+void Prewise_LinearContrastStretching(float** Pixel, int nHeight, int nWidth) {
+
+	for (int i = 0; i < nHeight * nWidth; i++) {
+		float value = (*Pixel)[i];
+		if (150 > value) {
+			(*Pixel)[i] = value * (2.0 / 15.0);
+		}
+		else if (150 <= value && 200 > value) {
+			(*Pixel)[i] = value * 4.0 - 580.0;
+		}
+		else if (200 <= value && 256 > value) {
+			(*Pixel)[i] = (value - 200.0) * (7.0 / 11.0) + 220.0;
+		}
+	}
+}
