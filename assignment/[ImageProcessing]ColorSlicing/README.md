@@ -29,7 +29,7 @@ Homework #3
 
 3. 다음 식을 이용하여 얼굴 영역을 추출해낼 수 있습니다.
 
-   ![1543410463182](C:\Users\kryj9\AppData\Roaming\Typora\typora-user-images\1543410463182.png)
+   ![image](https://user-images.githubusercontent.com/36066656/49203535-00706f00-f3ec-11e8-9025-23ac5f8a1c0d.png)
 
    여기서, 한 픽셀 당 3가지의 색을 사용하므로 i = 3이고, r은 현재의 픽셀 값, a는 추출해 낼 영역의 기준이 되는 중심 픽셀, R은 추출할 범위를 하나의 구로 생각했을 때의 반지름 값에 해당합니다.
 
@@ -55,8 +55,8 @@ Homework #3
 
 7. 추출한 얼굴 영역에 Smooth 필터를 적용한 결과는 다음과 같습니다.
 
-   ![1543415662548](C:\Users\kryj9\AppData\Roaming\Typora\typora-user-images\1543415662548.png)
+   ![image](https://user-images.githubusercontent.com/36066656/49203652-5f35e880-f3ec-11e8-8bb2-63ef5ba57e2e.png)
 
 8. 원본 영상에 checkArray를 이용하여 추출된 부분의 픽셀 위치에 추출 후 smooth 필터를 적용한 영상을 overwrite한 결과 영상입니다.
 
-   ![1543416036660](C:\Users\kryj9\AppData\Roaming\Typora\typora-user-images\1543416036660.png)
+   ![image](https://user-images.githubusercontent.com/36066656/49203686-8391c500-f3ec-11e8-80b4-5e2f182d676d.png)
