@@ -29,6 +29,41 @@ int main() {
 		}
 	}
 
+	for (int i = 0; i < HEIGHT * WIDTH; i++) {
+		float value = R[i];
+		if (150 > value) {
+			R[i] = value * (2.0 / 15.0);
+		}
+		else if (150 <= value && 200 > value) {
+			R[i] = value * 4.0 - 580.0;
+		}
+		else if (200 <= value && 256 > value) {
+			R[i] = (value - 200.0) * (7.0 / 11.0) + 220.0;
+		}
+
+		value = G[i];
+		if (150 > value) {
+			G[i] = value * (2.0 / 15.0);
+		}
+		else if (150 <= value && 200 > value) {
+			G[i] = value * 4.0 - 580.0;
+		}
+		else if (200 <= value && 256 > value) {
+			G[i] = (value - 200.0) * (7.0 / 11.0) + 220.0;
+		}
+
+		value = B[i];
+		if (150 > value) {
+			B[i] = value * (2.0 / 15.0);
+		}
+		else if (150 <= value && 200 > value) {
+			B[i] = value * 4.0 - 580.0;
+		}
+		else if (200 <= value && 256 > value) {
+			B[i] = (value - 200.0) * (7.0 / 11.0) + 220.0;
+		}
+	}
+
 	idx = 0;
 	for (int i = 0; i < HEIGHT; i++) {
 		for (int j = 0; j < WIDTH; j++) {
@@ -50,5 +85,7 @@ int main() {
 	delete[] R;
 	delete[] G;
 	delete[] B;
+
 	return 0;
 }
+
