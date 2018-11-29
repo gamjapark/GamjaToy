@@ -41,3 +41,17 @@ Homework #2
    yuv player로 확인한 결과 영상 lena512.raw는 다음과 같습니다.
 
    ![image](https://user-images.githubusercontent.com/36066656/49244086-4cee9580-f452-11e8-9d64-c3f9ffadae34.png)
+
+4. 결과가 맞는지 확인해 보기 위해 각각의 R, G, B 값의 히스토그램을 출력해보았습니다. 
+
+   - R 
+
+     ![image](https://user-images.githubusercontent.com/36066656/49244426-1d8c5880-f453-11e8-9c00-25e657537fee.png)
+
+   - G
+
+     ![image](https://user-images.githubusercontent.com/36066656/49244443-28df8400-f453-11e8-81a8-2f78c63e4871.png)
+
+   - B
+
+     ![image](https://user-images.githubusercontent.com/36066656/49244404-11a09680-f453-11e8-8136-0e703c1ed0eb.png)
