@@ -28,12 +28,16 @@ Color Slicing 과제를 수행하기 위해 jpg파일을 그림판을 이용해�
 
 : 실제 그림의 데이터를 담고 있습니다.
 
-### Try To
+### Try It!
 
 1. 해당 과제에서는 24비트 비트맵만을 사용하므로 **BITMAPINFOHEADER**에서 biBitCount를 읽어 24의 데이터를 가지는지 확인합니다.
-2. biBitCount의 값이 24인 경우에는 색상 테이블을 가지지 않으므로 **BITMAPINFOHEADER** 후에 바로 데이터를 읽습니다.
-3. **BITMAPINFOHEADER**에서 biWidth와 biHeight를 읽고, 해당 사이즈를 이용해 R, G, B의 크기를 할당받습니다.
-4. 데이터는 B, G, R 순으로 저장되어 있으므로, B, G, R 순으로 데이터를 받아옵니다.
-5. 저장한 데이터를 이용하여 raw 파일로 저장합니다.
-6. 파일의 이름에는 width  x height 정보를 추가하여 저장시킵니다.
 
+2. biBitCount의 값이 24인 경우에는 색상 테이블을 가지지 않으므로 **BITMAPINFOHEADER** 후에 바로 데이터를 읽습니다.
+
+3. **BITMAPINFOHEADER**에서 biWidth와 biHeight를 읽고, 해당 사이즈를 이용해 R, G, B의 크기를 할당받습니다.
+
+4. 데이터는 B, G, R 순으로 저장되어 있으므로, B, G, R 순으로 데이터를 받아옵니다.
+
+5. 저장한 데이터를 이용하여 raw 파일로 저장합니다.
+
+6. 파일의 이름에는 width  x height 정보를 추가하여 저장시킵니다.
