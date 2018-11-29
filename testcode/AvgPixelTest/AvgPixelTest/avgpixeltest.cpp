@@ -5,10 +5,10 @@ using namespace std;
 int main() {
 
 	ifstream readFile;
-	readFile.open("C:\\Users\\kryj9\\Documents\\카카오톡 받은 파일\\이승기\\이승기.raw", ios::binary | ios::in);
+	readFile.open("C:\\Users\\kryj9\\Desktop\\testface520x678.raw", ios::binary | ios::in);
 
-	int nHeight = 81;
-	int nWidth = 62;
+	int nHeight = 520;
+	int nWidth = 678;
 
 	unsigned char* inputImage = new unsigned char[nHeight * nWidth * 3];
 	for (int i = 0; i < nHeight; i++) {
@@ -16,9 +16,7 @@ int main() {
 	}
 	readFile.close();
 
-	float* R = new float[nHeight * nWidth];
-	float* G = new float[nHeight * nWidth];
-	float* B = new float[nHeight * nWidth];
+	float*R = new float[nHeight * nWidth], *G = new float[nHeight * nWidth], *B = new float[nHeight * nWidth];
 	int idx = 0;
 	for (int i = 0; i < nHeight; i++)
 	{
