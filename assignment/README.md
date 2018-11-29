@@ -11,3 +11,5 @@
       https://github.com/gamjapark/GamjaToy/blob/master/assignment/%5BImageProcessing%5DColorSlicing/README.md
    - WhiteBalancing
       https://github.com/gamjapark/GamjaToy/blob/master/assignment/%5BImageProcessing%5DWhiteBalancing/README.md
+   - PLContrastStretching
+      https://github.com/gamjapark/GamjaToy/blob/master/assignment/%5BImageProcessing%5DPLContrastStretching/README.md
