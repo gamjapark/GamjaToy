@@ -7,7 +7,7 @@ void BmpToRaw(const char * inputFilePath, const char* outputFilePath);
 
 int main() {
 
-	BmpToRaw("C:\\Users\\kryj9\\Desktop\\facecccccccccc.bmp", "C:\\Users\\kryj9\\Desktop\\facecccccccccc.raw");
+	BmpToRaw("C:\\Users\\kryj9\\Desktop\\paper.bmp", "C:\\Users\\kryj9\\Desktop\\paper.raw");
 	return 0;
 }
 
