@@ -17,3 +17,6 @@
 3. 키보드로부터 2차원 좌표 3개 입력
 4. 입력 받은 좌표 출력
 
+#### 결과
+
+![image](https://user-images.githubusercontent.com/36066656/49717081-3689da80-fc99-11e8-8cfa-ee030cb15a57.png)
