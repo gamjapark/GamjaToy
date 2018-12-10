@@ -15,3 +15,6 @@
 3.  키보드로부터 가구별 인구수 입력
 4.  층별 인구수 출력
 
+#### 결과
+
+![image](https://user-images.githubusercontent.com/36066656/49719673-31c92480-fca1-11e8-9b22-af012aa64880.png)
