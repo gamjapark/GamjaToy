@@ -16,3 +16,7 @@
    - 나이(정수)
 2. 키보드로부터 차례대로 개인 정보 입력
 3. 입력한 정보 출력
+
+#### 결과
+
+![image](https://user-images.githubusercontent.com/36066656/49716483-40124300-fc97-11e8-80aa-010d44615d3e.png)
