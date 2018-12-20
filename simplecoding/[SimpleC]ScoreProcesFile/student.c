@@ -2,7 +2,8 @@
 
 double CalTotalScore(const StudentInfo* student ){
 	return (double)(student->midtermExamScore*0.3 + student->finalExamScore*0.3 
-			+ student->trainingScore*0.2 + student->assignmentScore*0.2);
+			+ student->trainingScore * 1.25 * 0.2 
+			+ student->assignmentScore * 2.5 *0.2);
 }
 
 void PrintStudentInfo(const StudentInfo* student){
