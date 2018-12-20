@@ -1,7 +1,20 @@
 #include "student.h"
 
-double CalTotalScore(int mid, int fin, int train, int assign){
-	return (double)(mid * 0.3 + fin * 0.3 + train * 0.2 + assign * 0.2);
+double CalTotalScore(const StudentInfo* student ){
+	return (double)(student->midtermExamScore*0.3 + student->finalExamScore*0.3 
+			+ student->trainingScore*0.2 + student->assignmentScore*0.2);
+}
+
+void PrintStudentInfo(const StudentInfo* student){
+	printf("\t%d", student->stNum);
+	printf("\t%s", student->stName);
+	printf("\t\t%d", student->midtermExamScore);
+	printf("\t\t%d", student->finalExamScore);
+	printf("\t\t%d", student->trainingScore);
+	printf("\t\t%d", student->assignmentScore);
+	printf("\t%g", student->totalScore);
+	printf("\t %c", student->grade);
+	printf("\n");
 }
 
 int GetStandardStCount(int stCount, double ratio, int originStandard){
@@ -34,26 +47,27 @@ int GetStInfoFromFile(const char* fileName, StudentInfo** students){
 				break;
 			}
 			
-			switch(i){
-				case 0:
-					tempSi->stNum = atoi(token);
-					break;
-				case 1:
-					tempSi->stName = (char *)malloc(sizeof(char) * 30);
-					strcpy(tempSi->stName, token);
-					break;
-				case 2:
-					tempSi->midtermExamScore = atoi(token);
-					break;
-				case 3:
-					tempSi->finalExamScore = atoi(token);
-					break;
-				case 4:
-					tempSi->trainingScore = atoi(token);
-					break;
-				case 5:
-					tempSi->assignmentScore = atoi(token);
-					break;
+			switch(i)
+			{
+			case 0:
+				tempSi->stNum = atoi(token);
+				break;
+			case 1:
+				tempSi->stName = (char *)malloc(sizeof(char) * 30);
+				strcpy(tempSi->stName, token);
+				break;
+			case 2:
+				tempSi->midtermExamScore = atoi(token);
+				break;
+			case 3:
+				tempSi->finalExamScore = atoi(token);
+				break;
+			case 4:
+				tempSi->trainingScore = atoi(token);
+				break;
+			case 5:
+				tempSi->assignmentScore = atoi(token);
+				break;
 			}
 			token = strtok(NULL, " \t\n");
 		}
@@ -62,9 +76,8 @@ int GetStInfoFromFile(const char* fileName, StudentInfo** students){
 			break;
 		}else{
 			tempSi->funcP1 = CalTotalScore;
-			tempSi->totalScore = tempSi->funcP1(tempSi->midtermExamScore,
-				       	tempSi->finalExamScore, tempSi->trainingScore, 
-					tempSi->assignmentScore);
+			tempSi->totalScore = tempSi->funcP1(tempSi);
+
 			tempSi->funcP2 = PrintStudentInfo;
 			++studentCount;
 		}
@@ -73,20 +86,37 @@ int GetStInfoFromFile(const char* fileName, StudentInfo** students){
 
 }
 
-void PrintStudentInfo(const StudentInfo* student){
-	printf("\t%d", student->stNum);
-	printf("\t%s", student->stName);
-	printf("\t\t%d", student->midtermExamScore);
-	printf("\t\t%d", student->finalExamScore);
-	printf("\t\t%d", student->trainingScore);
-	printf("\t\t%d", student->assignmentScore);
-	printf("\t%g", student->totalScore);
-	printf("\t %c", student->grade);
-	printf("\n");
+void SwapStudent(StudentInfo* a, StudentInfo *b){
+	StudentInfo temp = *a;
+	*a = *b;
+	*b = temp;
 }
 
-
-
-
-
+StudentInfo* SortStudents(StudentInfo* students, int stCount, unsigned char check){
+	switch(check){
+	case 0: //grade by asc
+		for(int i = 0 ; i < stCount; i++){
+			int min = i; 
+			for(int j = i + 1; j < stCount; j++){
+				if(students[min].stNum > students[j].stNum){
+					min = j;
+				}
+			}
+			SwapStudent(&students[min], &students[i]);
+		}
+		break;
+	case 1: //total score by desc
+		for(int i = 0; i < stCount; i++){
+			int max = i;
+			for(int j = i + 1; j < stCount; j++){
+				if(students[max].totalScore < students[j].totalScore){
+					max = j;
+				}
+			}
+			SwapStudent(&students[max], &students[i]);
+		}
+		break;
+	}
+	return students;
+}
 

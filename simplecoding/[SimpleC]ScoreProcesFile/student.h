@@ -15,13 +15,16 @@ typedef struct StudentInfo{
 	double totalScore;
 	char grade;
 
-	double (*funcP1)(int, int, int, int);
+	double (*funcP1)(const struct StudentInfo*);
 	void (*funcP2)(const struct StudentInfo*);
-	int (*funcP3)(int, double, int);
+	//int (*funcP3)(int, double, int);
 }StudentInfo;
 
 int GetStInfoFromFile(const char* fileName, StudentInfo** students);
-double CalTotalScore(int mid, int fin, int train, int assign);
-int GetStandardStCount(int stCount, double ratio, int originStandard);
-void PrintStudentInfo(const StudentInfo* student);
+void SwapStudent(StudentInfo* a, StudentInfo* b);
+StudentInfo* SortStudents(StudentInfo* students, int stCount, unsigned char check);
+
+double CalTotalScore(const StudentInfo* student);
+//int GetStandardStCount(int stCount, double ratio, int originStandard);
+void  PrintStudentInfo(const StudentInfo* student);
 
