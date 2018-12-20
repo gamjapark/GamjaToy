@@ -120,3 +120,23 @@ StudentInfo* SortStudents(StudentInfo* students, int stCount, unsigned char chec
 	return students;
 }
 
+void PrintList(StudentInfo* students, int stCount, const char* printString){
+	printf("%s", printString);
+	printf("\t   학번\t\t이름\t중간시험점수\t기말시험점수\t   실습점수\t   과제점수\t총점\t학점\n");
+	for(int i = 0; i < stCount; i++){
+		students[i].funcP2(students + i);
+	}
+
+}
+
+void InputGrade(StudentInfo** students, int startIdx, int lastIdx, char grade){
+	StudentInfo* st = *students;
+	for(int i = startIdx; i < lastIdx; i++){
+		StudentInfo* temp = st + i;
+		if(temp->totalScore < 60){
+			temp->grade = 'F';
+		}else{
+			temp->grade = grade;
+		}
+	}
+}

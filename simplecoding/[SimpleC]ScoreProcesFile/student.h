@@ -23,8 +23,9 @@ typedef struct StudentInfo{
 int GetStInfoFromFile(const char* fileName, StudentInfo** students);
 void SwapStudent(StudentInfo* a, StudentInfo* b);
 StudentInfo* SortStudents(StudentInfo* students, int stCount, unsigned char check);
+void PrintList(StudentInfo* students, int stCount, const char* printString);
+void InputGrade(StudentInfo** students,int startIdx, int lastIdx, char grade);
 
 double CalTotalScore(const StudentInfo* student);
-//int GetStandardStCount(int stCount, double ratio, int originStandard);
 void  PrintStudentInfo(const StudentInfo* student);
 
