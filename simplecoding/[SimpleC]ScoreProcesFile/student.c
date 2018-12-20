@@ -63,11 +63,30 @@ int GetStInfoFromFile(const char* fileName, StudentInfo** students){
 		}else{
 			tempSi->funcP1 = CalTotalScore;
 			tempSi->totalScore = tempSi->funcP1(tempSi->midtermExamScore,
-				       	tempSi->finalExamScore, tempSi->trainingScore, tempSi->assignmentScore);
+				       	tempSi->finalExamScore, tempSi->trainingScore, 
+					tempSi->assignmentScore);
+			tempSi->funcP2 = PrintStudentInfo;
 			++studentCount;
 		}
 	}
 	return studentCount;
 
 }
+
+void PrintStudentInfo(const StudentInfo* student){
+	printf("\t%d", student->stNum);
+	printf("\t%s", student->stName);
+	printf("\t\t%d", student->midtermExamScore);
+	printf("\t\t%d", student->finalExamScore);
+	printf("\t\t%d", student->trainingScore);
+	printf("\t\t%d", student->assignmentScore);
+	printf("\t%g", student->totalScore);
+	printf("\t %c", student->grade);
+	printf("\n");
+}
+
+
+
+
+
 
